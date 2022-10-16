@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "planks",
+  "ingredients": [
+    [
+      {
+        "item": "birbsastralarmory:yggdrasil_log"
+      },
+      {
+        "item": "birbsastralarmory:yggdrasil_wood"
+      },
+      {
+        "item": "birbsastralarmory:stripped_yggdrasil_log"
+      },
+      {
+        "item": "birbsastralarmory:stripped_yggdrasil_wood"
+      }
+    ]
+  ],
+  "result": {
+    "item": "minecraft:acacia_planks",
+    "count": 4
+  }
+}

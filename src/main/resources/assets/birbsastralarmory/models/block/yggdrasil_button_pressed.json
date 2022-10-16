@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button_pressed",
+  "textures": {
+    "texture": "birbsastralarmory:block/yggdrasil_planks"
+  }
+}

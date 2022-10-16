@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/leaves",
+  "textures": {
+    "all": "birbsastralarmory:block/yggdrasil_leaves"
+  }
+}

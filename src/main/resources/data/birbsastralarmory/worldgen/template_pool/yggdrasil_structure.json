@@ -1,0 +1,26 @@
+{
+
+
+
+  "name": "birbsastralarmory:yggdrasil_structure",
+
+
+  "fallback": "minecraft:empty",
+
+
+  "elements": [
+    {
+
+      "weight": 1,
+      "element": {
+
+
+        "location": "birbsastralarmory:yggdrasil_structure",
+
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}

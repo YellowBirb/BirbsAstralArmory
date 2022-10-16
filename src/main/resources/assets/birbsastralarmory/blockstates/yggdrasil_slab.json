@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "birbsastralarmory:block/yggdrasil_slab"
+    },
+    "type=double": {
+      "model": "birbsastralarmory:block/yggdrasil_planks"
+    },
+    "type=top": {
+      "model": "birbsastralarmory:block/yggdrasil_slab_top"
+    }
+  }
+}

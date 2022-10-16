@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "birbsastralarmory:yggdrasil_log", "birbsastralarmory:stripped_yggdrasil_log", "birbsastralarmory:yggdrasil_planks",
+    "birbsastralarmory:yggdrasil_slab", "birbsastralarmory:yggdrasil_stairs", "birbsastralarmory:yggdrasil_wood",
+    "birbsastralarmory:stripped_yggdrasil_wood", "birbsastralarmory:yggdrasil_button", "birbsastralarmory:yggdrasil_door"
+  ]
+}

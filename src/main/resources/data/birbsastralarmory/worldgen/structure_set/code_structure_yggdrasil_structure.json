@@ -1,0 +1,24 @@
+{
+
+  "structures": [
+    {
+      "structure": "birbsastralarmory:code_structure_yggdrasil_structure",
+      "weight": 1
+    }
+  ],
+  "placement": {
+
+    "type": "minecraft:random_spread",
+
+
+    "salt": 1242002496,
+
+
+    "spacing": 32,
+
+
+    "separation": 3
+
+
+  }
+}

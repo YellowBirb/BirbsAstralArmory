@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "birbsastralarmory:block/stripped_yggdrasil_log",
+    "side": "birbsastralarmory:block/stripped_yggdrasil_log"
+  }
+}

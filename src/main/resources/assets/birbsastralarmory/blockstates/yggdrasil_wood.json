@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "birbsastralarmory:block/yggdrasil_wood",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "birbsastralarmory:block/yggdrasil_wood"
+    },
+    "axis=z": {
+      "model": "birbsastralarmory:block/yggdrasil_wood",
+      "x": 90
+    }
+  }
+}
