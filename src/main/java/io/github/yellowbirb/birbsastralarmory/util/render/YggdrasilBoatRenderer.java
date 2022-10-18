@@ -9,7 +9,9 @@ import com.mojang.math.Vector3f;
 import java.util.Map;
 import java.util.stream.Stream;
 
+import io.github.yellowbirb.birbsastralarmory.BirbsAstralArmory;
 import io.github.yellowbirb.birbsastralarmory.init.customentities.YggdrasilBoat;
+import io.github.yellowbirb.birbsastralarmory.init.customentities.YggdrasilChestBoat;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.client.renderer.MultiBufferSource;
@@ -19,6 +21,7 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
+import net.minecraft.world.entity.vehicle.Boat;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
@@ -31,13 +34,13 @@ public class YggdrasilBoatRenderer extends EntityRenderer<YggdrasilBoat> {
         this.shadowRadius = 0.8F;
         this.boatResources = Stream.of(YggdrasilBoat.Type.values()).collect(ImmutableMap.toImmutableMap((p_173938_) -> {
             return p_173938_;
-        }, (p_234575_) -> {
-            return Pair.of(new ResourceLocation(getTextureLocation()), this.createBoatModel(p_234563_, p_234575_));
+        }, (p_173938_) -> {
+        return Pair.of(new ResourceLocation(BirbsAstralArmory.MODID, getTextureLocation()), this.createBoatModel(p_234563_));
         }));
     }
 
-    private YggdrasilBoatModel createBoatModel(EntityRendererProvider.Context p_234569_, YggdrasilBoat.Type p_234570_) {
-        ModelLayerLocation modellayerlocation = ModelLayers.createBoatModelName(p_234570_);
+    private YggdrasilBoatModel createBoatModel(EntityRendererProvider.Context p_234569_) {
+        ModelLayerLocation modellayerlocation = new ModelLayerLocation(new ResourceLocation(BirbsAstralArmory.MODID, "boat/oak"), "main");
         return new YggdrasilBoatModel(p_234569_.bakeLayer(modellayerlocation));
     }
 

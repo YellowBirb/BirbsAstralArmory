@@ -9,6 +9,7 @@ import com.mojang.math.Vector3f;
 import java.util.Map;
 import java.util.stream.Stream;
 
+import io.github.yellowbirb.birbsastralarmory.BirbsAstralArmory;
 import io.github.yellowbirb.birbsastralarmory.init.customentities.YggdrasilBoat;
 import io.github.yellowbirb.birbsastralarmory.init.customentities.YggdrasilChestBoat;
 import net.minecraft.client.model.geom.ModelLayerLocation;
@@ -34,17 +35,17 @@ public class YggdrasilChestBoatRenderer extends EntityRenderer<YggdrasilChestBoa
         this.boatResources = Stream.of(YggdrasilChestBoat.Type.values()).collect(ImmutableMap.toImmutableMap((p_173938_) -> {
             return p_173938_;
         }, (p_234575_) -> {
-            return Pair.of(new ResourceLocation(getTextureLocation(p_234575_)), this.createBoatModel(p_234563_, p_234575_));
+            return Pair.of(new ResourceLocation(BirbsAstralArmory.MODID, getTextureLocation(p_234575_)), this.createBoatModel(p_234563_, p_234575_));
         }));
     }
 
     private YggdrasilChestBoatModel createBoatModel(EntityRendererProvider.Context p_234569_, YggdrasilChestBoat.Type p_234570_) {
-        ModelLayerLocation modellayerlocation = ModelLayers.createChestBoatModelName(p_234570_);
+        ModelLayerLocation modellayerlocation = new ModelLayerLocation(new ResourceLocation(BirbsAstralArmory.MODID, "chest_boat/oak"), "main");
         return new YggdrasilChestBoatModel(p_234569_.bakeLayer(modellayerlocation), true);
     }
 
-    private static String getTextureLocation(YggdrasilBoat.Type p_234566_) {
-        return "textures/entity/chest_boat/" + p_234566_.getName() + ".png";
+    private static String getTextureLocation(YggdrasilChestBoat.Type p_234566_) {
+        return "textures/entity/chest_boat/oak.png";
     }
 
     public void render(YggdrasilChestBoat p_113929_, float p_113930_, float p_113931_, PoseStack p_113932_, MultiBufferSource p_113933_, int p_113934_) {

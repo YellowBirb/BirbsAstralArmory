@@ -22,7 +22,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 @OnlyIn(Dist.CLIENT)
 public class YggdrasilChestBoatModel extends ListModel<YggdrasilChestBoat> {
 
-    public static ModelLayerLocation layerLocation = new ModelLayerLocation(new ResourceLocation(BirbsAstralArmory.MODID, "yggdrasil_chest_boat"), "main");
+    public static ModelLayerLocation layerLocation = new ModelLayerLocation(new ResourceLocation(BirbsAstralArmory.MODID, "chest_boat/oak"), "main");
 
     private static final String LEFT_PADDLE = "left_paddle";
     private static final String RIGHT_PADDLE = "right_paddle";
