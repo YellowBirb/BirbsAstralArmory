@@ -1,9 +1,9 @@
 package io.github.yellowbirb.birbsastralarmory.init;
 
 import io.github.yellowbirb.birbsastralarmory.BirbsAstralArmory;
-import io.github.yellowbirb.birbsastralarmory.init.customentities.YggdrasilBoat;
-import io.github.yellowbirb.birbsastralarmory.init.customitems.YggdrasilBoatItem;
-import io.github.yellowbirb.birbsastralarmory.init.customitems.YggdrasilChestBoatItem;
+import io.github.yellowbirb.birbsastralarmory.init.customentities.BirbsAstralBoat;
+import io.github.yellowbirb.birbsastralarmory.init.customitems.BirbsAstralBoatItem;
+import io.github.yellowbirb.birbsastralarmory.init.customitems.BirbsAstralChestBoatItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.SignItem;
@@ -22,16 +22,16 @@ public class ItemInit {
     public static final RegistryObject<Item> placeholder2 = ITEMS.register("placeholder2",
             () -> new Item(new Item.Properties().stacksTo(3).tab(mytab)));
 
-    public static final RegistryObject<Item> yggrasil_sign = ITEMS.register("yggdrasil_sign",
+    public static final RegistryObject<Item> yggdrasil_sign = ITEMS.register("yggdrasil_sign",
             () -> new SignItem(new Item.Properties().stacksTo(16).tab(mytab),
             BlockInit.yggdrasil_sign.get(), BlockInit.yggdrasil_wall_sign.get()));
 
     public static final RegistryObject<Item> yggdrasil_boat = ITEMS.register("yggdrasil_boat",
-            () -> new YggdrasilBoatItem(false,
-                    YggdrasilBoat.Type.OAK,
-                    new Item.Properties().tab(mytab)));
+            () -> new BirbsAstralBoatItem(false,
+                    BirbsAstralBoat.BoatType.YGGDRASIL,
+                    new Item.Properties().tab(mytab).stacksTo(1)));
     public static final RegistryObject<Item> yggdrasil_chest_boat = ITEMS.register("yggdrasil_chest_boat",
-            () -> new YggdrasilChestBoatItem(true,
-                    YggdrasilBoat.Type.OAK,
-                    new Item.Properties().tab(mytab)));
+            () -> new BirbsAstralChestBoatItem(true,
+                    BirbsAstralBoat.Type.OAK,
+                    new Item.Properties().tab(mytab).stacksTo(1)));
 }

@@ -40,13 +40,13 @@ public class BirbsAstralArmory {
     private void clientSetup(final FMLClientSetupEvent event) {
 
         WoodType.register(BlockInit.yggdrasil_wood_type);
+        Sheets.addWoodType(BlockInit.yggdrasil_wood_type);
         BlockEntityRenderers.register(BlockEntityInit.yggdrasil_sign.get(), SignRenderer::new);
 
     }
 
     private void setup(FMLCommonSetupEvent event) {
 
-        Sheets.addWoodType(BlockInit.yggdrasil_wood_type);
 
         BirbPackets.register();
 

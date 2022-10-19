@@ -1,10 +1,11 @@
 {
   "item.birbsastralarmory.placeholder": "Placeholder but ingame name",
   "item.birbsastralarmory.placeholder2": "Placeholder2 but ingame name",
+  "item.birbsastralarmory.yggdrasil_boat": "Yggdrasil Boat",
+  "item.birbsastralarmory.yggdrasil_chest_boat": "Yggdrasil Boat with Chest",
 
   "block.birbsastralarmory.stripped_yggdrasil_log": "Stripped Yggdrasil Log",
   "block.birbsastralarmory.stripped_yggdrasil_wood": "Stripped Yggdrasil Wood",
-  "item.birbsastralarmory.yggdrasil_boat": "Yggdrasil Boat",
   "block.birbsastralarmory.yggdrasil_branch": "Yggdrasil Branch",
   "block.birbsastralarmory.yggdrasil_button": "Yggdrasil Button",
   "block.birbsastralarmory.yggdrasil_door": "Yggdrasil Door",
@@ -20,5 +21,7 @@
   "block.birbsastralarmory.yggdrasil_trapdoor": "Yggdrasil Trapdoor",
   "block.birbsastralarmory.yggdrasil_wood": "Yggdrasil Wood",
 
-  "itemGroup.birbsastralarmory": "Birb's Astral Armory"
+  "itemGroup.birbsastralarmory": "Birb's Astral Armory",
+
+  "entity.birbsastralarmory.birbs_astral_chest_boat": "Boat with Chest"
 }

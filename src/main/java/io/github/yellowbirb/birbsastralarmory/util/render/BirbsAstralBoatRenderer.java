@@ -7,7 +7,7 @@ import com.mojang.datafixers.util.Pair;
 import com.mojang.math.Quaternion;
 import com.mojang.math.Vector3f;
 import io.github.yellowbirb.birbsastralarmory.BirbsAstralArmory;
-import io.github.yellowbirb.birbsastralarmory.init.customentities.BYGBoat;
+import io.github.yellowbirb.birbsastralarmory.init.customentities.BirbsAstralBoat;
 import net.minecraft.client.model.BoatModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.renderer.MultiBufferSource;
@@ -18,44 +18,43 @@ import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 
-import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Stream;
 
-public class BYGBoatRenderer extends EntityRenderer<BYGBoat>{
+public class BirbsAstralBoatRenderer extends EntityRenderer<BirbsAstralBoat>{
 
-    private final Map<BYGBoat.BYGType, Pair<ResourceLocation, BoatModel>> boatResources;
+    private final Map<BirbsAstralBoat.BoatType, Pair<ResourceLocation, BoatModel>> boatResources;
 
-    public BYGBoatRenderer(EntityRendererProvider.Context context, boolean hasChest) {
+    public BirbsAstralBoatRenderer(EntityRendererProvider.Context context, boolean hasChest) {
         super(context);
         this.shadowRadius = 0.8F;
         this.boatResources =
-                Stream.of(BYGBoat.BYGType.values()).collect(ImmutableMap.toImmutableMap((bygType) -> {
-                    return bygType;
-                }, (bygType) -> {
-                    return Pair.of(new ResourceLocation(BirbsAstralArmory.MODID, getTextureLocation(bygType, hasChest)), this.createBoatModel(context, bygType, hasChest));
+                Stream.of(BirbsAstralBoat.BoatType.values()).collect(ImmutableMap.toImmutableMap((boatType) -> {
+                    return boatType;
+                }, (boatType) -> {
+                    return Pair.of(new ResourceLocation(BirbsAstralArmory.MODID, getTextureLocation(boatType, hasChest)), this.createBoatModel(context, boatType, hasChest));
                 }));
     }
 
-    private BoatModel createBoatModel(EntityRendererProvider.Context context, BYGBoat.BYGType bygType, boolean hasChest) {
+    private BoatModel createBoatModel(EntityRendererProvider.Context context, BirbsAstralBoat.BoatType bygType, boolean hasChest) {
         ModelLayerLocation modellayerlocation = hasChest ? createChestBoatModelName(bygType) : createBoatModelName(bygType);
         return new BoatModel(context.bakeLayer(modellayerlocation), hasChest);
     }
 
-    public static ModelLayerLocation createChestBoatModelName(BYGBoat.BYGType type) {
+    public static ModelLayerLocation createChestBoatModelName(BirbsAstralBoat.BoatType type) {
         return new ModelLayerLocation(new ResourceLocation(BirbsAstralArmory.MODID, "chest_boat/" + type.getName()), "main");
     }
 
-    public static ModelLayerLocation createBoatModelName(BYGBoat.BYGType type) {
+    public static ModelLayerLocation createBoatModelName(BirbsAstralBoat.BoatType type) {
         return new ModelLayerLocation(new ResourceLocation(BirbsAstralArmory.MODID, "boat/" + type.getName()), "main");
     }
 
-    private static String getTextureLocation(BYGBoat.BYGType bygType, boolean hasChest) {
+    private static String getTextureLocation(BirbsAstralBoat.BoatType bygType, boolean hasChest) {
         return hasChest ? "textures/entity/chest_boat/" + bygType.getName() + ".png" : "textures/entity/boat/" + bygType.getName() + ".png";
     }
 
     @Override
-    public void render(BYGBoat boat, float entityYaw, float partialTicks, PoseStack matrixStackIn, MultiBufferSource multiBufferSource, int packedLightIn) {
+    public void render(BirbsAstralBoat boat, float entityYaw, float partialTicks, PoseStack matrixStackIn, MultiBufferSource multiBufferSource, int packedLightIn) {
         matrixStackIn.pushPose();
         matrixStackIn.translate(0.0D, 0.375D, 0.0D);
         matrixStackIn.mulPose(Vector3f.YP.rotationDegrees(180.0F - entityYaw));
@@ -74,7 +73,7 @@ public class BYGBoatRenderer extends EntityRenderer<BYGBoat>{
             matrixStackIn.mulPose(new Quaternion(new Vector3f(1.0F, 0.0F, 1.0F), boat.getBubbleAngle(partialTicks), true));
         }
 
-        Pair<ResourceLocation, BoatModel> pair = this.boatResources.get(boat.getBYGBoatType());
+        Pair<ResourceLocation, BoatModel> pair = this.boatResources.get(boat.getBirbsAstralBoatType());
         ResourceLocation resourceLocation = (ResourceLocation) pair.getFirst();
         BoatModel boatModel = (BoatModel) pair.getSecond();
         matrixStackIn.scale(-1.0F, -1.0F, 1.0F);
@@ -95,7 +94,7 @@ public class BYGBoatRenderer extends EntityRenderer<BYGBoat>{
     /**
      * Returns the location of an entity's texture.
      */
-    public ResourceLocation getTextureLocation(BYGBoat boat) {
+    public ResourceLocation getTextureLocation(BirbsAstralBoat boat) {
         return this.boatResources.get(boat.getBoatType()).getFirst();
     }
 

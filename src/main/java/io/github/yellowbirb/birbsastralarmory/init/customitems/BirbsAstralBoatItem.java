@@ -3,7 +3,7 @@ package io.github.yellowbirb.birbsastralarmory.init.customitems;
 import java.util.List;
 import java.util.function.Predicate;
 
-import io.github.yellowbirb.birbsastralarmory.init.customentities.YggdrasilBoat;
+import io.github.yellowbirb.birbsastralarmory.init.customentities.BirbsAstralBoat;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -20,12 +20,12 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 
-public class YggdrasilBoatItem extends Item {
+public class BirbsAstralBoatItem extends Item {
     private static final Predicate<Entity> ENTITY_PREDICATE = EntitySelector.NO_SPECTATORS.and(Entity::isPickable);
-    private final YggdrasilBoat.Type type;
+    private final BirbsAstralBoat.BoatType type;
     private final boolean hasChest;
 
-    public YggdrasilBoatItem(boolean p_220013_, YggdrasilBoat.Type p_220014_, Item.Properties p_220015_) {
+    public BirbsAstralBoatItem(boolean p_220013_, BirbsAstralBoat.BoatType p_220014_, Item.Properties p_220015_) {
         super(p_220015_);
         this.hasChest = p_220013_;
         this.type = p_220014_;
@@ -52,8 +52,8 @@ public class YggdrasilBoatItem extends Item {
             }
 
             if (hitresult.getType() == HitResult.Type.BLOCK) {
-                YggdrasilBoat boat = this.getBoat(p_40622_, hitresult);
-                boat.setType(this.type);
+                BirbsAstralBoat boat = this.getBoat(p_40622_, hitresult);
+                boat.setBirbsAstralBoatType(this.type);
                 boat.setYRot(p_40623_.getYRot());
                 if (!p_40622_.noCollision(boat, boat.getBoundingBox())) {
                     return InteractionResultHolder.fail(itemstack);
@@ -75,7 +75,7 @@ public class YggdrasilBoatItem extends Item {
         }
     }
 
-    private YggdrasilBoat getBoat(Level p_220017_, HitResult p_220018_) {
-        return (YggdrasilBoat)(this.hasChest ? new ChestBoat(p_220017_, p_220018_.getLocation().x, p_220018_.getLocation().y, p_220018_.getLocation().z) : new YggdrasilBoat(p_220017_, p_220018_.getLocation().x, p_220018_.getLocation().y, p_220018_.getLocation().z));
+    private BirbsAstralBoat getBoat(Level p_220017_, HitResult p_220018_) {
+        return (BirbsAstralBoat)(this.hasChest ? new ChestBoat(p_220017_, p_220018_.getLocation().x, p_220018_.getLocation().y, p_220018_.getLocation().z) : new BirbsAstralBoat(p_220017_, p_220018_.getLocation().x, p_220018_.getLocation().y, p_220018_.getLocation().z));
     }
 }

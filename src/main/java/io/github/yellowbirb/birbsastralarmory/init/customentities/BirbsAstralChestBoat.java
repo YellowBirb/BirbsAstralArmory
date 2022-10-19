@@ -16,20 +16,18 @@ import net.minecraft.world.entity.SlotAccess;
 import net.minecraft.world.entity.monster.piglin.PiglinAi;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.vehicle.Boat;
 import net.minecraft.world.entity.vehicle.ContainerEntity;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ChestMenu;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 
-public class YggdrasilChestBoat extends YggdrasilBoat implements HasCustomInventoryScreen, ContainerEntity {
+public class BirbsAstralChestBoat extends BirbsAstralBoat implements HasCustomInventoryScreen, ContainerEntity {
 
     private static final int CONTAINER_SIZE = 27;
     private NonNullList<ItemStack> itemStacks = NonNullList.withSize(27, ItemStack.EMPTY);
@@ -37,12 +35,12 @@ public class YggdrasilChestBoat extends YggdrasilBoat implements HasCustomInvent
     private ResourceLocation lootTable;
     private long lootTableSeed;
 
-    public YggdrasilChestBoat(EntityType<? extends YggdrasilBoat> p_219869_, Level p_219870_) {
+    public BirbsAstralChestBoat(EntityType<? extends BirbsAstralBoat> p_219869_, Level p_219870_) {
         super(p_219869_, p_219870_);
     }
 
-    public YggdrasilChestBoat(Level p_219872_, double p_219873_, double p_219874_, double p_219875_) {
-        this(EntityInit.yggdrasil_chest_boat.get(), p_219872_);
+    public BirbsAstralChestBoat(Level p_219872_, double p_219873_, double p_219874_, double p_219875_) {
+        this(EntityInit.birbs_astral_chest_boat.get(), p_219872_);
         this.setPos(p_219873_, p_219874_, p_219875_);
         this.xo = p_219873_;
         this.yo = p_219874_;

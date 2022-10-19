@@ -2,9 +2,10 @@ package io.github.yellowbirb.birbsastralarmory.events;
 
 import io.github.yellowbirb.birbsastralarmory.BirbsAstralArmory;
 import io.github.yellowbirb.birbsastralarmory.init.EntityInit;
-import io.github.yellowbirb.birbsastralarmory.init.customentities.BYGBoat;
+import io.github.yellowbirb.birbsastralarmory.init.customentities.BirbsAstralBoat;
 import io.github.yellowbirb.birbsastralarmory.util.render.*;
 import net.minecraft.client.model.BoatModel;
+import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
@@ -17,19 +18,18 @@ public class ModClientEvents {
     @SubscribeEvent
     public static void entityRenderers(EntityRenderersEvent.RegisterRenderers event) {
 
-        event.registerEntityRenderer(EntityInit.yggdrasil_boat.get(), YggdrasilBoatRenderer::new);
-        event.registerEntityRenderer(EntityInit.yggdrasil_chest_boat.get(), YggdrasilChestBoatRenderer::new);
-        event.registerEntityRenderer(EntityInit.BYGBOAT.get(), (EntityRendererProvider.Context context) -> new BYGBoatRenderer(context, false));
+        event.registerEntityRenderer(EntityInit.birbs_astral_boat.get(), (EntityRendererProvider.Context context) -> new BirbsAstralBoatRenderer(context, false));
+        event.registerEntityRenderer(EntityInit.birbs_astral_chest_boat.get(), (EntityRendererProvider.Context context) -> new BirbsAstralBoatRenderer(context, true));
 
     }
+
 
     @SubscribeEvent
     public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
 
-        event.registerLayerDefinition(YggdrasilBoatModel.layerLocation, YggdrasilBoatModel::createBodyModel);
-        event.registerLayerDefinition(YggdrasilChestBoatModel.layerLocation, YggdrasilChestBoatModel::createBodyModel);
-        for (BYGBoat.BYGType value : BYGBoat.BYGType.values()) {
-            event.registerLayerDefinition(BYGBoatRenderer.createBoatModelName(value), () -> BoatModel.createBodyModel(false));
+        for (BirbsAstralBoat.BoatType value : BirbsAstralBoat.BoatType.values()) {
+            event.registerLayerDefinition(BirbsAstralBoatRenderer.createBoatModelName(value), () -> BoatModel.createBodyModel(false));
+            event.registerLayerDefinition(BirbsAstralBoatRenderer.createChestBoatModelName(value), () -> BoatModel.createBodyModel(true));
         }
     }
 
