@@ -1,6 +1,7 @@
 package io.github.yellowbirb.birbsastralarmory.init;
 
 import io.github.yellowbirb.birbsastralarmory.BirbsAstralArmory;
+import io.github.yellowbirb.birbsastralarmory.init.customentities.BYGBoat;
 import io.github.yellowbirb.birbsastralarmory.init.customentities.YggdrasilBoat;
 import io.github.yellowbirb.birbsastralarmory.init.customentities.YggdrasilChestBoat;
 import net.minecraft.world.entity.EntityType;
@@ -27,5 +28,12 @@ public class EntityInit {
                             .sized(1.375F, 0.5625F)
                             .clientTrackingRange(10)
                             .build(BirbsAstralArmory.MODID+":yggdrasil_chest_boat"));
+
+    public static final RegistryObject<EntityType<BYGBoat>> BYGBOAT =
+            ENTITIES.register("byg_boat",
+                    () -> EntityType.Builder.<BYGBoat>of(BYGBoat::new, MobCategory.MISC)
+                            .sized(1.375F, 0.5625F)
+                            .clientTrackingRange(10)
+                            .build(BirbsAstralArmory.MODID+":byg_boat"));
 
 }

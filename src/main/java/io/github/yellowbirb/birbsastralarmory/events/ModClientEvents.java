@@ -2,10 +2,10 @@ package io.github.yellowbirb.birbsastralarmory.events;
 
 import io.github.yellowbirb.birbsastralarmory.BirbsAstralArmory;
 import io.github.yellowbirb.birbsastralarmory.init.EntityInit;
-import io.github.yellowbirb.birbsastralarmory.util.render.YggdrasilBoatModel;
-import io.github.yellowbirb.birbsastralarmory.util.render.YggdrasilBoatRenderer;
-import io.github.yellowbirb.birbsastralarmory.util.render.YggdrasilChestBoatModel;
-import io.github.yellowbirb.birbsastralarmory.util.render.YggdrasilChestBoatRenderer;
+import io.github.yellowbirb.birbsastralarmory.init.customentities.BYGBoat;
+import io.github.yellowbirb.birbsastralarmory.util.render.*;
+import net.minecraft.client.model.BoatModel;
+import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -19,6 +19,7 @@ public class ModClientEvents {
 
         event.registerEntityRenderer(EntityInit.yggdrasil_boat.get(), YggdrasilBoatRenderer::new);
         event.registerEntityRenderer(EntityInit.yggdrasil_chest_boat.get(), YggdrasilChestBoatRenderer::new);
+        event.registerEntityRenderer(EntityInit.BYGBOAT.get(), (EntityRendererProvider.Context context) -> new BYGBoatRenderer(context, false));
 
     }
 
@@ -27,7 +28,9 @@ public class ModClientEvents {
 
         event.registerLayerDefinition(YggdrasilBoatModel.layerLocation, YggdrasilBoatModel::createBodyModel);
         event.registerLayerDefinition(YggdrasilChestBoatModel.layerLocation, YggdrasilChestBoatModel::createBodyModel);
-
+        for (BYGBoat.BYGType value : BYGBoat.BYGType.values()) {
+            event.registerLayerDefinition(BYGBoatRenderer.createBoatModelName(value), () -> BoatModel.createBodyModel(false));
+        }
     }
 
 }
