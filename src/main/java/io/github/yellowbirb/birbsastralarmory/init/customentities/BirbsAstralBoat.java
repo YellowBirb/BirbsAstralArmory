@@ -126,12 +126,11 @@ public class BirbsAstralBoat extends Boat {
 
     @Override
     public @NotNull Packet<?> getAddEntityPacket() {
-        //TODO: Is this right?
         return NetworkHooks.getEntitySpawningPacket(this);
     }
 
     public enum BoatType {
-        YGGDRASIL("oak");
+        YGGDRASIL("yggdrasil");
 
 
         private final String name;

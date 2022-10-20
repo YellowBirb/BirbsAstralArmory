@@ -7,9 +7,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.PressurePlateBlock;
-import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.Material;
@@ -85,6 +83,11 @@ public class BlockInit {
                     .instabreak()
                     .sound(SoundType.GRASS)),
             new Item.Properties().tab(mytab));
+    public static final RegistryObject<Block> potted_yggdrasil_branch = BLOCKS.register("potted_yggdrasil_branch",
+            () -> new FlowerPotBlock(
+                    () -> (FlowerPotBlock) Blocks.FLOWER_POT,
+                    BlockInit.yggdrasil_branch,
+                    BlockBehaviour.Properties.copy(Blocks.FLOWER_POT)));
     public static final RegistryObject<Block> yggdrasil_planks = register("yggdrasil_planks",
             () -> new YggdrasilPlanks(BlockBehaviour.Properties.of(Material.WOOD)
                     .strength(30f, 1200.0f)
@@ -120,7 +123,7 @@ public class BlockInit {
                     .strength(30f, 1200f)
                     .sound(SoundType.WOOD)
                     .noOcclusion()),
-                    new Item.Properties().tab(mytab));
+            new Item.Properties().tab(mytab));
     public static final RegistryObject<Block> yggdrasil_wood = register("yggdrasil_wood",
             () -> new YggdrasilWood(BlockBehaviour.Properties.of(Material.WOOD)
                     .strength(30f, 1200f)

@@ -7,6 +7,9 @@ import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -18,6 +21,13 @@ import org.jetbrains.annotations.NotNull;
 @Mod(BirbsAstralArmory.MODID)
 public class BirbsAstralArmory {
     public static final String MODID = "birbsastralarmory";
+
+
+    //TODO: comes here
+    //
+    //TODO: recipes, see: external libraries/net.minecraft:client:extra:1.19.2/client-extra.jar/data/minecraft/recipes
+    //TODO: check loot tables
+
 
     public BirbsAstralArmory() {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -47,6 +57,7 @@ public class BirbsAstralArmory {
 
     private void setup(FMLCommonSetupEvent event) {
 
+        ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(BlockInit.yggdrasil_branch.getId(), BlockInit.potted_yggdrasil_branch);
 
         BirbPackets.register();
 

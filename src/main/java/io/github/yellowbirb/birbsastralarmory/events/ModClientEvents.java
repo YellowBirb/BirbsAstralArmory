@@ -23,10 +23,8 @@ public class ModClientEvents {
 
     }
 
-
     @SubscribeEvent
     public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
-
         for (BirbsAstralBoat.BoatType value : BirbsAstralBoat.BoatType.values()) {
             event.registerLayerDefinition(BirbsAstralBoatRenderer.createBoatModelName(value), () -> BoatModel.createBodyModel(false));
             event.registerLayerDefinition(BirbsAstralBoatRenderer.createChestBoatModelName(value), () -> BoatModel.createBodyModel(true));
