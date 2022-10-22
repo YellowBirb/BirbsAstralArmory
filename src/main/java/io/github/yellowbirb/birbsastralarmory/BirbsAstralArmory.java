@@ -7,7 +7,6 @@ import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraft.world.level.block.state.properties.WoodType;
@@ -25,8 +24,9 @@ public class BirbsAstralArmory {
 
     //TODO: comes here
     //
-    //TODO: recipes, see: external libraries/net.minecraft:client:extra:1.19.2/client-extra.jar/data/minecraft/recipes
+    //TODO: make planks and logs able to craft thins like vanilla chests
     //TODO: check loot tables
+    //TODO: sort creative mode tab
 
 
     public BirbsAstralArmory() {
