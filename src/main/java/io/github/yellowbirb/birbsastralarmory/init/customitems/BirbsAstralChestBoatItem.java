@@ -3,6 +3,7 @@ package io.github.yellowbirb.birbsastralarmory.init.customitems;
 import java.util.List;
 import java.util.function.Predicate;
 
+import io.github.yellowbirb.birbsastralarmory.init.customentities.BirbsAstralBoat;
 import io.github.yellowbirb.birbsastralarmory.init.customentities.BirbsAstralChestBoat;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
@@ -21,10 +22,10 @@ import net.minecraft.world.phys.Vec3;
 
 public class BirbsAstralChestBoatItem extends Item {
     private static final Predicate<Entity> ENTITY_PREDICATE = EntitySelector.NO_SPECTATORS.and(Entity::isPickable);
-    private final BirbsAstralChestBoat.Type type;
+    private final BirbsAstralChestBoat.BoatType type;
     private final boolean hasChest;
 
-    public BirbsAstralChestBoatItem(boolean p_220013_, BirbsAstralChestBoat.Type p_220014_, Item.Properties p_220015_) {
+    public BirbsAstralChestBoatItem(boolean p_220013_, BirbsAstralChestBoat.BoatType p_220014_, Item.Properties p_220015_) {
         super(p_220015_);
         this.hasChest = p_220013_;
         this.type = p_220014_;
@@ -52,7 +53,7 @@ public class BirbsAstralChestBoatItem extends Item {
 
             if (hitresult.getType() == HitResult.Type.BLOCK) {
                 BirbsAstralChestBoat boat = this.getBoat(p_40622_, hitresult);
-                boat.setType(this.type);
+                boat.setBirbsAstralBoatType(this.type);
                 boat.setYRot(p_40623_.getYRot());
                 if (!p_40622_.noCollision(boat, boat.getBoundingBox())) {
                     return InteractionResultHolder.fail(itemstack);

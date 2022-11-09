@@ -1,0 +1,16 @@
+{
+  "replace": false,
+  "values": [
+    "#birbsastralarmory:yggdrasil_logs",
+    "birbsastralarmory:yggdrasil_planks",
+    "birbsastralarmory:yggdrasil_slab",
+    "birbsastralarmory:yggdrasil_pressure_plate",
+    "birbsastralarmory:yggdrasil_fence",
+    "birbsastralarmory:yggdrasil_trapdoor",
+    "birbsastralarmory:yggdrasil_fence_gate",
+    "birbsastralarmory:yggdrasil_stairs",
+    "birbsastralarmory:yggdrasil_button",
+    "birbsastralarmory:yggdrasil_door",
+    "birbsastralarmory:yggdrasil_sign"
+  ]
+}

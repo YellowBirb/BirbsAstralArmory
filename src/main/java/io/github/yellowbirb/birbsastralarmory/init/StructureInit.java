@@ -23,5 +23,4 @@ public class StructureInit {
     public static final RegistryObject<StructureType<YggdrasilStructure>> YGGDRASIL_STRUCTURE = STRUCTURE_TYPES.register("yggdrasil_structure",
      () -> () -> YggdrasilStructure.CODEC);
 
-    //TODO: make structure and implement structure
 }
