@@ -17,16 +17,6 @@ public class ModCommonEvents {
             if(!(event.getEntity().getMainHandItem().getItem() == Items.NETHERITE_AXE)) {
                 event.setCanceled(true);
             }
-
         }
-        if (event.getState().getBlock() instanceof YggdrasilLeaves) {
-            if(!(event.getEntity().getMainHandItem().getItem() == Items.SHEARS)) {
-                event.setCanceled(true);
-            }
-
-        }
-
-
     }
-
 }

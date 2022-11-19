@@ -2,24 +2,22 @@ package io.github.yellowbirb.birbsastralarmory;
 
 import io.github.yellowbirb.birbsastralarmory.init.*;
 import io.github.yellowbirb.birbsastralarmory.networking.BirbPackets;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.core.NonNullList;
-import net.minecraft.core.Registry;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
-import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.NotNull;
 
 @Mod(BirbsAstralArmory.MODID)
@@ -29,8 +27,14 @@ public class BirbsAstralArmory {
 
     //TODO: comes here
     //
-    //TODO: check loot tables and yggdrasiltreegrower
-    //TODO: my structure no spawn :(
+    //TODO: my structure shouldnt replace this much dirt; Solution: two parts: trunk and crown; also theres 2 grass {:(}
+    //TODO: Step 1: Fluid (move registryobjects from fluidregitrycontainer to iteminit for sorting)you must create a sense of scarcity shells will sell much better if the people think they're rare you see bare with me put them on island stockpile 'em high 'til they're rarer than a diamond
+    //TODO: Step 2: Armor make the poeple think that they want really want 'em really fucking want 'em hit 'em like bronson
+    //TODO: Step 3: Armor Interact with Fluid (different armors in code, same in game) It's Monopoly invest inside some property start a corporation make a logo do it properly
+    //TODO: Step 4: Weapons, Tools EXPAND EXPAND EXPAND EXPAND clear forest make land fresh blood on hands
+    //TODO: Step 5: Astral Entity Entity (dialog) why just shells why limit yourself she sells seashells sell oil as well
+    //TODO: Step 6: new stuff (dungeons (any), aether island (end), nether globe (nether)) sell guns sell oil sell diamond sell rock sell water to a fish sell the time to a clock
+    //TODO: Step 7: rigorous testing
 
     public BirbsAstralArmory() {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -41,6 +45,8 @@ public class BirbsAstralArmory {
         ItemInit.ITEMS.register(bus);
 
         EntityInit.ENTITIES.register(bus);
+
+        FluidInit.register(bus);
 
         SoundsInit.SOUND_EVENTS.register(bus);
 
@@ -55,6 +61,8 @@ public class BirbsAstralArmory {
         WoodType.register(BlockInit.yggdrasil_wood_type);
         Sheets.addWoodType(BlockInit.yggdrasil_wood_type);
         BlockEntityRenderers.register(BlockEntityInit.yggdrasil_sign.get(), SignRenderer::new);
+        ItemBlockRenderTypes.setRenderLayer(FluidInit.yggdrasil_resin_source.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FluidInit.yggdrasil_resin_flowing.get(), RenderType.translucent());
 
     }
 

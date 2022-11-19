@@ -7,7 +7,7 @@
   "biomes": "#birbsastralarmory:has_structure/code_structure_yggdrasil_biomes",
   "step": "surface_structures",
   "start_height": {
-    "absolute": 60
+    "absolute": 0
   },
   "probier auch mal anderes, siehe":"https://minecraft.fandom.com/wiki/Custom_structure#Configured_Structure_Feature",
   "project_start_to_heightmap": "WORLD_SURFACE_WG",

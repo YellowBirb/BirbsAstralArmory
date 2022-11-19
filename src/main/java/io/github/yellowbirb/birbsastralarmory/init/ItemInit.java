@@ -4,10 +4,7 @@ import io.github.yellowbirb.birbsastralarmory.BirbsAstralArmory;
 import io.github.yellowbirb.birbsastralarmory.init.customentities.BirbsAstralBoat;
 import io.github.yellowbirb.birbsastralarmory.init.customitems.BirbsAstralBoatItem;
 import io.github.yellowbirb.birbsastralarmory.init.customitems.BirbsAstralChestBoatItem;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.SignItem;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -45,6 +42,9 @@ public class ItemInit {
             () -> new BlockItem(BlockInit.yggdrasil_planks.get(), new Item.Properties().tab(mytab)));
     public static final RegistryObject<Item> yggdrasil_pressure_plate = ITEMS.register("yggdrasil_pressure_plate",
             () -> new BlockItem(BlockInit.yggdrasil_pressure_plate.get(), new Item.Properties().tab(mytab)));
+    public static final RegistryObject<BucketItem> yggdrasil_resin_bucket = ITEMS.register("yggdrasil_resin_bucket",
+            () -> new BucketItem(FluidInit.yggdrasil_resin_source,
+                    new Item.Properties().tab(mytab).craftRemainder(Items.BUCKET).stacksTo(1)));
     public static final RegistryObject<Item> yggdrasil_sign = ITEMS.register("yggdrasil_sign",
             () -> new SignItem(new Item.Properties().stacksTo(16).tab(mytab),
             BlockInit.yggdrasil_sign.get(), BlockInit.yggdrasil_wall_sign.get()));
