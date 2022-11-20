@@ -43,7 +43,7 @@ public class ItemInit {
     public static final RegistryObject<Item> yggdrasil_pressure_plate = ITEMS.register("yggdrasil_pressure_plate",
             () -> new BlockItem(BlockInit.yggdrasil_pressure_plate.get(), new Item.Properties().tab(mytab)));
     public static final RegistryObject<BucketItem> yggdrasil_resin_bucket = ITEMS.register("yggdrasil_resin_bucket",
-            () -> new BucketItem(FluidInit.yggdrasil_resin_source,
+            () -> new BucketItem(FluidInit.yggdrasil_resin.source,
                     new Item.Properties().tab(mytab).craftRemainder(Items.BUCKET).stacksTo(1)));
     public static final RegistryObject<Item> yggdrasil_sign = ITEMS.register("yggdrasil_sign",
             () -> new SignItem(new Item.Properties().stacksTo(16).tab(mytab),

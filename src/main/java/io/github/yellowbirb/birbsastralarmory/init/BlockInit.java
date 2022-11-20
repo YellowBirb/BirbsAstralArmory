@@ -83,7 +83,7 @@ public class BlockInit {
                             .strength(15F, 1200f)
                             .sound(SoundType.WOOD)));
     public static final RegistryObject<LiquidBlock> yggdrasil_resin_block = BLOCKS.register("yggdrasil_resin_block",
-            () -> new LiquidBlock(FluidInit.yggdrasil_resin_source, BlockBehaviour.Properties.copy(Blocks.WATER)));
+            () -> new LiquidBlock(FluidInit.yggdrasil_resin.source, BlockBehaviour.Properties.copy(Blocks.WATER)));
     public static final RegistryObject<Block> yggdrasil_sign = BLOCKS.register("yggdrasil_sign",
             () -> new YggdrasilSign(BlockBehaviour.Properties.of(Material.WOOD)
                     .strength(30f,1200f)

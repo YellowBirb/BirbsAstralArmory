@@ -61,8 +61,8 @@ public class BirbsAstralArmory {
         WoodType.register(BlockInit.yggdrasil_wood_type);
         Sheets.addWoodType(BlockInit.yggdrasil_wood_type);
         BlockEntityRenderers.register(BlockEntityInit.yggdrasil_sign.get(), SignRenderer::new);
-        ItemBlockRenderTypes.setRenderLayer(FluidInit.yggdrasil_resin_source.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(FluidInit.yggdrasil_resin_flowing.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FluidInit.yggdrasil_resin.source.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FluidInit.yggdrasil_resin.flowing.get(), RenderType.translucent());
 
     }
 
@@ -100,6 +100,7 @@ public class BirbsAstralArmory {
             p_40778_.add(new ItemStack(ItemInit.yggdrasil_boat.get()));
             p_40778_.add(new ItemStack(ItemInit.yggdrasil_chest_boat.get()));
             p_40778_.add(new ItemStack(ItemInit.yggdrasil_sign.get()));
+            p_40778_.add(new ItemStack(ItemInit.yggdrasil_resin_bucket.get()));
 
         }
     };
